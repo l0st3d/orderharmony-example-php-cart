@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>Orderharmony API products</title>
+		<script src="js/jquery-1.7.1.min.js"></script>
+		<script src="js/pure.js"></script>
+	</head>
+	<body>
+
+		<!-- HTML template -->
+			<div class="happy-product">
+				<a href="product.html?id="></a>
+				<p class="happy-product-description"></p>
+			</div>
+
+		<script>
+			function getURLParameter(name) {
+			    return decodeURI(
+			        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+			    );
+			}
+			
+			$.getJSON('http://dev.orderharmony.com/public/product.php?id='+getURLParameter('id'), function(data) {
+				
+				//declaration of the actions PURE has to do
+			    var directive = {
+				     'a':'product.name',
+				     'a@href+':'product.id',
+				     '.happy-product-description':'product.description'
+			    };
+				
+				//note the use of render instead of autoRender and the 2nd parameter with directive
+				$('div.happy-product').render(data, directive);
+			});
+		</script>
+	</body>
+</html>

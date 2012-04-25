@@ -1,0 +1,15 @@
+{"order":
+ {"customer":{"name":"test", "email":"test@example.com"},
+  "customer-reference":"customers-ref-12346",
+  "order-lines":
+  [{"order-line":{"product-variant":{"product-code":"NIVEA_CSBC"},
+    "quantity":2}},
+   {"order-line":{"product-variant":{"product-code":"NIVEA_CSSC"},
+    "quantity":3}}],
+  "invoice-address":
+  [{"line":"Their house"}, {"line":"Their street"},
+   {"line":"Their town"}, {"line":"Their county"},
+   {"postcode":"GG1 2BB"}],
+  "delivery-address":
+  [{"line":"My house"}, {"line":"My street"}, {"line":"My town"},
+   {"postcode":"AA1 2BB"}]}}
